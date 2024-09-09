@@ -8,7 +8,7 @@ RUN npm install -g nodemon && npm install
 
 COPY . .
 
-EXPOSE 7000
+EXPOSE 8000
 
 CMD ["nodemon", "src/index.js"]
 

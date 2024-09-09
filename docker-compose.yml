@@ -1,0 +1,37 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: node_app
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=raju
+      - POSTGRES_PASSWORD=raju@123
+      - POSTGRES_DB=backend_v12
+      - NODE_ENV=development
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    networks:
+      - my_network
+
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      - POSTGRES_USER=raju
+      - POSTGRES_PASSWORD=raju@123
+      - POSTGRES_DB=backend_12
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my_network 
+        
+volumes:
+  postgres_data:
+
+networks:
+  my_network:
