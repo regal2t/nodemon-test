@@ -20,11 +20,11 @@ services:
 
   db:
     image: postgres:13
-    container_name: postgres_vdb
+    container_name: postgres_db
     environment:
       - POSTGRES_USER=raju
       - POSTGRES_PASSWORD=raju@123
-      - POSTGRES_DB=backend_12
+      - POSTGRES_DB=backend_v12
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
