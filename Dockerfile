@@ -1,5 +1,5 @@
 FROM node:18-alpine 
-
+MAINTAINER raju
 WORKDIR /app
 
 COPY package*.json ./
@@ -11,5 +11,6 @@ COPY . .
 EXPOSE 8000
 
 CMD ["nodemon", "src/index.js"]
+
 
 
