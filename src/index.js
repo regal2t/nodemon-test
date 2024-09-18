@@ -37,7 +37,7 @@ const server = http.createServer(async (req, res) => {
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end(`Hello, ${hostname}\n${dbMessage}\n`);
+    res.end(`Hello, ${hostname}\n${dbMessage}\n this is version 33`);
   } catch (error) {
     res.statusCode = 500;
     res.setHeader('Content-Type', 'text/plain');
